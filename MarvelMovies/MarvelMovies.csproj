@@ -202,6 +202,7 @@
       <DependentUpon>201809101602080_ajust_display.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DBInitializer.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
