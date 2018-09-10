@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MarvelMovies.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 id="table-name">MVC</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table movie-list-table">
+    <tr class="movie-header">
+        <th>
+            Movie
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Plot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImdbRating)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ImdbID)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="movie-overview-wrapper" id="movie-@item.ID">
+                <div class="movie-overview">
+                    <div class="poster-wrapper">
+                        <img class="poster" src="~/Images/@Html.DisplayFor(modelItem => item.Poster)" />
+                    </div>
+                    <div class="movie-title">
+                        @Html.DisplayFor(modelItem => item.Title) (@item.Released.Year)
+                    </div>
+                </div>
+            </td>
+            <td class="movie-extra">
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td class="movie-extra">
+                <div class="plot">
+                    @Html.DisplayFor(modelItem => item.Plot)
+                </div>
+            </td>
+            <td class="movie-extra">
+                @Html.DisplayFor(modelItem => item.ImdbRating) (@Html.DisplayFor(modelItem => item.ImdbVotes))
+            </td>
+            <td class="movie-extra">
+                @Html.DisplayFor(modelItem => item.ImdbID)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>*@
+        </tr>
+    }
+
+</table>

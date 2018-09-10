@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MarvelMovies.Webform.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%: Page.Title %> - Marvel Cinematic Universe</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Styles.Render("~/Content/css") %>
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <%: Scripts.Render("~/bundles/jquery") %>
+    <%: Scripts.Render("~/bundles/bootstrap") %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%: Scripts.Render("~/bundles/common") %>
+</head>
+<body>
+    <div class="navbar navbar-expand-md fixed-top bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-md brand-wrapper">
+            <a href="/">
+                <img class="navbar-brand brand-img" src="/Images/logo.jpg" />
+            </a>
+        </nav>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="nav-mvc">
+                    <a class="nav-link" href="/Movies">MVC</a>
+                </li>
+                <li class="nav-item" id="nav-mb">
+                    <a class="nav-link" href="/Webform/MovieList.aspx">WebForm(Model binding)</a>
+                </li>
+                <li class="nav-item" id="nav-tr">
+                    <a class="nav-link" href="/Webform/Traditional/MovieList.aspx">WebForm(SqlDataSource)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <hr />
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %> - Marvel Cinematic Universe </p>
+        </footer>
+    </div>
+
+</body>
+</html>

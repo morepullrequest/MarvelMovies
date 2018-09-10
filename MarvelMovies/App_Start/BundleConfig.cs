@@ -25,6 +25,13 @@ namespace MarvelMovies
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/tr").Include("~/Scripts/tr.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mb").Include("~/Scripts/mb.js"));
+            bundles.Add(new ScriptBundle("~/bundles/mvc").Include("~/Scripts/mvc.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include("~/Scripts/common.js"));
         }
     }
 }
